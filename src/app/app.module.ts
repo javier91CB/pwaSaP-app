@@ -24,8 +24,8 @@ import { OrdersProductDataService } from './service/orders-product/orders-produc
 import { ProductDataService } from './service/product/product-data.service';
 import { ProviderDataService } from './service/provider/provider-data.service';
 import { LoginModule } from './components/login/login.module';
-import { NavmenuComponent } from './components/navmenu/navmenu.component'; 
-
+import { NavmenuComponent } from './components/navmenu/navmenu.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +35,8 @@ import { NavmenuComponent } from './components/navmenu/navmenu.component';
     DashboardComponent,
     NotificationComponent,
     OrdersComponent,
-    NavmenuComponent
+    NavmenuComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +44,7 @@ import { NavmenuComponent } from './components/navmenu/navmenu.component';
     // LoginModule,
     HttpModule,
     AppRoutingModule,
+    BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

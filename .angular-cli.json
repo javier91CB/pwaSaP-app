@@ -20,7 +20,9 @@
       "prefix": "app",
       "serviceWorker": true,
       "styles": [
+        "../node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css",
         "styles.css"
+        
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

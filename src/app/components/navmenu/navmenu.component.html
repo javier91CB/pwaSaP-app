@@ -1,38 +1,17 @@
-<div class='main-nav'>
-  <div class='navbar navbar-inverse'>
-      <div class='navbar-header'>
-          <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-              <span class='sr-only'>Men&uacute;</span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-          </button>
-          <a class='navbar-brand' [routerLink]="['/home']">Services And Products App</a>
-      </div>
-      <div class='clearfix'></div>
-      <div class='navbar-collapse collapse'>
-          <ul class='nav navbar-nav'>
-              <li [routerLinkActive]="['link-active']">
-                  <a [routerLink]="['/home']">
-                      <span class='glyphicon glyphicon-home'></span> Home
-                  </a>
-              </li>
-              <li [routerLinkActive]="['link-active']">
-                <a [routerLink]="['/dashboard']">
-                    <span class='glyphicon glyphicon-education'></span> Dashboard
-                </a>
-              </li>
-              <li [routerLinkActive]="['link-active']">
-                  <a [routerLink]="['/notification']">
-                      <span class='glyphicon glyphicon-education'></span> Notification
-                  </a>
-              </li>
-              <li [routerLinkActive]="['link-active']">
-                  <a [routerLink]="['/orders']">
-                      <span class='glyphicon glyphicon-th-list'></span> Orders
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</div>
+    <ul class="nav nav-tabs" >
+        <li class="nav-item">
+          <a class="nav-link " href="#"  routerLink="/home">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#"  routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#"  routerLink="/notification">Notification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" routerLink="/orders" >Orders</a>
+        </li>
+        
+    </ul>
+
+ 
