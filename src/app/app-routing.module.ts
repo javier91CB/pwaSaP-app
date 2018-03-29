@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+// import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home'},

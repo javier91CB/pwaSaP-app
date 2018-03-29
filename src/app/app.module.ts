@@ -23,7 +23,8 @@ import { OrdersDataService } from './service/orders/orders-data.service';
 import { OrdersProductDataService } from './service/orders-product/orders-product-data.service';
 import { ProductDataService } from './service/product/product-data.service';
 import { ProviderDataService } from './service/provider/provider-data.service';
-import { LoginModule } from './components/login/login.module'; 
+import { LoginModule } from './components/login/login.module';
+import { NavmenuComponent } from './components/navmenu/navmenu.component'; 
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginModule } from './components/login/login.module';
     // LoginComponent,
     DashboardComponent,
     NotificationComponent,
-    OrdersComponent
+    OrdersComponent,
+    NavmenuComponent
   ],
   imports: [
     BrowserModule,

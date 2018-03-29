@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  imageSrc: any = './images/img-01-png';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  loginUser($event) {}
 }
