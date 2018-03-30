@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { ToasterService } from '../../service/index';
 
 @Component({
@@ -7,13 +6,13 @@ import { ToasterService } from '../../service/index';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent implements OnInit {
+export class NotificationComponent {
+  debugger;
 
   constructor(private toasterService: ToasterService) {
   }
 
   Success() {
-    debugger;
     this.toasterService.Success('You are awesome!', 'Success!');
   }
 
@@ -31,9 +30,6 @@ export class NotificationComponent implements OnInit {
 
   Custom() {
     this.toasterService.Success('Order delivery correctly', 'Success');
-  }
-
-  ngOnInit() {
   }
 
 }
