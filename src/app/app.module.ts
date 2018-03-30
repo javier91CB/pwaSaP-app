@@ -28,8 +28,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AlertComponent } from './components/directives/alert.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, fakeBackendProvider } from './components/helpers/index';
-import { AuthenticationService, AlertService } from './service/index';
+import { AuthenticationService, AlertService, ToasterService } from './service/index';
 import { AuthGuard } from './components/guards/index';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { LoadItemComponent } from './components/load-item/load-item/load-item.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { AuthGuard } from './components/guards/index';
     OrdersComponent,
     NavmenuComponent,
     ProfileComponent,
-    AlertComponent
+    AlertComponent,
+    LoadItemComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { AuthGuard } from './components/guards/index';
     HttpModule,
     HttpClientModule,
     AppRoutingModule,
+    ToastModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
@@ -62,6 +66,7 @@ import { AuthGuard } from './components/guards/index';
     AlertService,
     AuthGuard,
     AuthenticationService,
+    ToasterService,
     UserDataService,
     {
       provide: HTTP_INTERCEPTORS,

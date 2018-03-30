@@ -7,3 +7,4 @@ export * from './orders-product/orders-product-data.service';
 export * from './product/product-data.service';
 export * from './provider/provider-data.service';
 export * from './user/user-data.service';
+export * from './toaster/toaster.service';

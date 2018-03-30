@@ -1,4 +1,22 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <app-navmenu></app-navmenu>
 <p>
   notification works!
 </p>
+
+<div class="btn-group" style="width:100%;">
+    <button type ="button" (ngClick)= "Success()" class="login100-form-btn">
+    Success
+    </button>
+    <button type ="button" ng-click="Info()" class="login100-form-btn">
+    Info
+    </button>
+    <button type ="button" ng-click="Warning()" class="login100-form-btn">
+    Warning
+    </button>
+    <button type ="button" ng-click="Error()" class="login100-form-btn">
+    Error
+    </button>
+</div>

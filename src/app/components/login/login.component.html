@@ -1,8 +1,11 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100">
 			<div class="login100-pic">
-				<img [src]="imageSrc">
+				<img src="https://www.artmajeur.com/medias/standard/a/s/asquinancy/artwork/9209284_modernos-fondos-marcos-c.png">
 			</div>
 
 			<form class="login100-form validate-form"  (ngSubmit) ="f.form.valid && login()" #f="ngForm">
@@ -10,20 +13,22 @@
 					Login
 				</span>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+				<div class="wrap-input100 validate-input" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
 					<input class="input100" type="text" placeholder="Email" name="username" [(ngModel)]="model.username" #username="ngModel" required>
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-envelope" aria-hidden="true"></i>
 					</span>
+					<div *ngIf="f.submitted && !username.valid" class="help-block">User Name is required</div>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Password is required" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+				<div class="wrap-input100 validate-input" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 					<input class="input100" type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-lock" aria-hidden="true"></i>
 					</span>
+					<div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
 				</div>
 				
 				<div class="container-login100-form-btn">

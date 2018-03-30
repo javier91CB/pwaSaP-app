@@ -190,6 +190,25 @@
     padding-bottom: 54px;
   }
   
+  .btn-group button {
+    color: white; /* White text */
+    padding: 5px 5px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
   
   /*---------------------------------------------*/
   .wrap-input100 {
