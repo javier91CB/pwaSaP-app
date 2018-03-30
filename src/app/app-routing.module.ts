@@ -5,21 +5,25 @@ import { HomeComponent } from './components/home/home.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
-// import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './components/guards/index';
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'home'},
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     { path: 'dashboard', component: DashboardComponent},
-    { path: 'home', component: HomeComponent},
     { path: 'notification', component: NotificationComponent},
     { path: 'orders', component: OrdersComponent},
     { path: 'register', component: RegisterComponent},
-    // { path: 'login', component: LoginComponent}
+    { path: 'login', component: LoginComponent},
+
+    { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-    providers: []
-})
-export class AppRoutingModule {}
+// @NgModule({
+//     imports: [RouterModule.forRoot(routes)],
+//     exports: [RouterModule],
+//     providers: []
+// })
+
+// export class AppRoutingModule {}
+export const AppRoutingModule = RouterModule.forRoot(routes);

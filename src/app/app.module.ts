@@ -12,7 +12,6 @@ import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-// import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { OrdersComponent } from './components/orders/orders.component';
@@ -23,28 +22,34 @@ import { OrdersDataService } from './service/orders/orders-data.service';
 import { OrdersProductDataService } from './service/orders-product/orders-product-data.service';
 import { ProductDataService } from './service/product/product-data.service';
 import { ProviderDataService } from './service/provider/provider-data.service';
-import { LoginModule } from './components/login/login.module';
+import { LoginComponent } from './components/login/login.component';
 import { NavmenuComponent } from './components/navmenu/navmenu.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AlertComponent } from './components/directives/alert.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor, fakeBackendProvider } from './components/helpers/index';
+import { AuthenticationService, AlertService } from './service/index';
+import { AuthGuard } from './components/guards/index';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     HomeComponent,
-    // LoginComponent,
+    LoginComponent,
     DashboardComponent,
     NotificationComponent,
     OrdersComponent,
     NavmenuComponent,
-    ProfileComponent
+    ProfileComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    // LoginModule,
     HttpModule,
+    HttpClientModule,
     AppRoutingModule,
-    BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
@@ -54,7 +59,16 @@ import { ProfileComponent } from './components/profile/profile.component';
     OrdersProductDataService,
     ProductDataService,
     ProviderDataService,
-    UserDataService
+    AlertService,
+    AuthGuard,
+    AuthenticationService,
+    UserDataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    fakeBackendProvider
 ],
   bootstrap: [AppComponent]
 })
