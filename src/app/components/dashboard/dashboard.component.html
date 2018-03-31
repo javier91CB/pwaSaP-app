@@ -2,6 +2,64 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <app-navmenu></app-navmenu>
-<p>
-  dashboard works!
-</p>
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-6 col-md-offset-3">
+        <div align="center">
+            <p style="color:#428bca">
+              Dashborad Pool
+            </p>
+          </div>
+<div>
+    <div align="center">
+        <p style="color:#428bca">
+            Effectivity indicator per type of product
+        </p>
+      </div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <button (click)="randomize()">Update</button>
+  </div>
+  <div>
+  <div align="center">
+        <p style="color:#428bca">
+            Effectivity indicator per type of service
+        </p>
+      </div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <button (click)="randomize()">Update</button>
+  </div>
+  <div style="display: block">
+      <div align="center">
+          <p style="color:#428bca">
+              Status per type of Service and Product
+          </p>
+        </div>
+      <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+  </div>
+
+</div>
+</div>
+</div>

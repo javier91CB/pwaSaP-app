@@ -32,6 +32,7 @@ import { AuthenticationService, AlertService, ToasterService } from './service/i
 import { AuthGuard } from './components/guards/index';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import { LoadItemComponent } from './components/load-item/load-item/load-item.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LoadItemComponent } from './components/load-item/load-item/load-item.co
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChartsModule,
     HttpClientModule,
     AppRoutingModule,
     ToastModule.forRoot(),
