@@ -30,14 +30,14 @@ export class DashboardComponent {
   public chartClicked(e: any): void {
     console.log(e);
   }
- 
+
   public chartHovered(e: any): void {
     console.log(e);
   }
 
   public randomize(): void {
     // Only Change 3 values
-    let data = [
+    const data = [
       Math.round(Math.random() * 100),
       59,
       80,
@@ -45,7 +45,7 @@ export class DashboardComponent {
       56,
       (Math.random() * 100),
       40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
+    const clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;
     /**
