@@ -15,6 +15,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
+        debugger;
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
 
         // wrap in delayed observable to simulate server api call

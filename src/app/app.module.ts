@@ -74,8 +74,9 @@ import { ChartsModule } from 'ng2-charts';
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
-    },
-    fakeBackendProvider
+    }
+    // },
+    // fakeBackendProvider
 ],
   bootstrap: [AppComponent]
 })

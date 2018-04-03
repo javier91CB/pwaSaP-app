@@ -50,17 +50,17 @@
             <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate = "Valid DNI is required">
-          <input class="input100" type="text" name="dni" placeholder="DNI">
+        <div class="wrap-input100 validate-input" [ngClass]="{ 'has-error': f.submitted && !dni.valid }">
+          <input class="input100" type="text" name="dni" placeholder="DNI" [(ngModel)]="model.dni" #dni="ngModel" required>
           <span class="focus-input100"></span>
           <span class="symbol-input100">
             <i class="fa fa-envelope" aria-hidden="true"></i>
           </span>
         </div>
        
-        <div class="wrap-input101">
+        <div class="wrap-input101 validate-input" [ngClass]="{ 'has-error': f.submitted && !isProvider.valid }">
           <label class="symbol-input100">Provider</label>
-          <input class="input101" type="checkbox" name="provider" placeholder="Provider">
+          <input class="input101" type="checkbox" name="provider" placeholder="Provider" [(ngModel)]="model.isProvider" #isProvider="ngModel">
         </div>
 
         <div>
